@@ -1,6 +1,5 @@
 function pigLatin(text) {
   let inputArray = text.split(" ");
-  console.log(inputArray);
   const vowelArray = ["a", "e", "i", "o", "u"];
   let outputArray = [];
   inputArray.forEach(element => {
@@ -8,7 +7,14 @@ function pigLatin(text) {
       if (vowelArray.includes(element.charAt(i).toLowerCase())) {
         if(i === 0){
           outputArray.push(element.slice(1, (element.length)) + element.slice(0, 1) + "way")
-          console.log(outputArray);
+        } else if(i > 0){
+          if(element.slice(0, i).includes("q")){
+            if(element.charAt(i+1) === "u"){
+              outputArray.push(element.slice(i+1, (element.length)) + element.slice(0, i+1) + "ay");
+            }
+          } else {
+          outputArray.push(element.slice(i, (element.length)) + element.slice(0, i) + "ay");
+        }
         }
       }
     }
