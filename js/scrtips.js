@@ -4,7 +4,7 @@ function pigLatin(text) {
   let outputArray = [];
   inputArray.forEach(element => {
     for (let i = 0; i < element.length; i++) {
-      if(element.charAt[0] === "q"){
+      if(element.charAt(0) === "q"){
         outputArray.push(element.slice(2, (element.length)) + element.slice(0, 2) + "ay");
         break;
       } else if (vowelArray.includes(element.charAt(0).toLowerCase())) {
